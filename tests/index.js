@@ -170,4 +170,6 @@ suite('Testy', function() {
 		});
 	});
 
+});
+
 	
