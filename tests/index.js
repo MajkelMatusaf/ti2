@@ -91,21 +91,6 @@ suite('Testy', function() {
 				});
 	});
 	
-	//sprawdzenie w przypadku podania pustej nazwy listy przez serwer
-	 test('Podanie pustej nazwy listy przez serwer', function(done, client) {
-		server.eval(function() {
-		Lists.insert({
-		name: ''
-		});
-			var listka = Lists.find({
-			name: ''}).fetch();
-			emit('listka', listka);
-			});
-				server.once('listka', function(listka) {
-				assert.equal(listka.length, 1);
-				done();
-				});
-	});
 	//sprawdzenie w przypadku podania pustego zadania przez klienta
 	 test('Podanie pustej zadania', function(done, client) {
 		client.eval(function() {
