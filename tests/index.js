@@ -43,7 +43,7 @@ suite('Testy', function() {
 	client.eval(function() {
 		Todos.insert({
 		todotext: '',
-		listid:Session.get('listid'),
+		listid:session.get('listid'),
 		done:false
 		});
 			var sprawdzenie = Todos.find({
