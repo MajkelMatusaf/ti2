@@ -1,0 +1,36 @@
+<template name="zadanie">
+	<div class="well well-lg page-header">
+	  <bold>Zostal wybrany projekt:</bold><h1>{{list.name}} 
+	 <br><small>Dodaj nowe zadanie do projektu </small><br>
+	<input class="input-large todotext" placeholder="Nowe zadanie" type="text" name="todotext" value="" id="todotext"><button type="submit" class="btn btn-primary btn-default guzik2 btn-lg">Dodaj</button><br></h1>
+	
+	</div>
+	<table class="tabelka">
+	    <thead>
+	        <tr>
+	            <td>Zrealizowane</td>
+		    <td>Do zrobienia</td>
+		    <td>Usun</td>
+	        </tr>
+	    </thead>
+	   <tbody>
+	        {{#each todolist}}
+				{{>zadaniewliscie}}
+			{{/each}}
+	   </tbody>
+	</table>
+
+</template>
+<template name="zadaniewliscie">
+	<tr class="todoitem {{done_class}}"> 
+        <td><label class="checkbox">
+            <input class="check" type="checkbox" {{done_checkbox}} value="">
+        </label></td>
+		{{#if editing_todo}}
+		<td><input class="todotext" type="text" name="todotext" value="{{todotext}}" id="todotext"/></td>
+		{{else}}
+		<td class="todoitemtext">{{todotext}}</td>
+		{{/if}}
+		<td><i class="icon icon-trash removetodo"></i></td>
+  	 </tr> 
+</template>

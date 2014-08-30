@@ -1,0 +1,16 @@
+<template name="lista">
+<a class="brand" href="#"><img style="height:80px;display:block;margin-left:auto;margin-right:auto"  src="/meteor.gif"/></a>
+	<ul class="well well-lg lists nav nav-pills nav-stacked">
+	<bold>Dodaj nowy projekt</bold><br><br>
+	<input class="name input-large" placeholder="Podaj nazwe projektu" type="text" name="name" value="" id="name"><br><button type="submit" class="btn btn-primary btn-default guzik btn-lg">Dodaj</button><br><br>
+	<small>Dostepne listy zadan</small><br>
+		{{#each lists}}
+	    	{{>listitem}}
+		{{/each}}
+	</ul>
+	
+</template>
+
+<template name="listitem">
+	<li class="list"><a href="#">{{name}}<i class="icon icon-trash pull-right removelist"></i></a></li>
+</template>
