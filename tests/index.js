@@ -39,11 +39,11 @@ suite('Testy', function() {
 			done();
 		});
 	});
-	test('Czy istnieje zadanie', function(done, client) {
+/*	test('Czy istnieje zadanie', function(done, client) {
 	client.eval(function() {
 		Todos.insert({
 		todotext: '',
-		listid:session.get('listid'),
+		listid:Session.get('listid'),
 		done:false
 		});
 			var sprawdzenie = Todos.find({
@@ -54,7 +54,8 @@ suite('Testy', function() {
 			assert.equal(sprawdzenie.length, 1);
 			done();
 		});
-	});
+	}); */
+	
 	test('Inicjalizacja klienta', function(done, client) {
 		client.eval(function() {
 		var testup = Lists.find().fetch();
@@ -90,7 +91,7 @@ suite('Testy', function() {
 				done();
 				});
 	});
-	
+	/*
 	//sprawdzenie w przypadku podania pustego zadania przez klienta
 	 test('Podanie pustej zadania', function(done, client) {
 		client.eval(function() {
@@ -107,7 +108,7 @@ suite('Testy', function() {
 				assert.equal(listka.length, 1);
 				done();
 				});
-	});
+	}); 
 	
 	//sprawdzenie w przypadku podania pustego zadania przez serwer
 	 test('Podanie pustego zadania', function(done, client) {
@@ -125,7 +126,7 @@ suite('Testy', function() {
 				assert.equal(listka.length, 1);
 				done();
 				});
-	});
+	}); */
 	
 	 test('Usuwanie listy', function(done, client) {
 		client.eval(function() {
@@ -139,7 +140,7 @@ suite('Testy', function() {
 			done();
 		});
 	});
-	
+	/*
 	test('Usuwanie zadania', function(done, client) {
 		client.eval(function() {
 		var zadanie = "zadanie";
@@ -153,7 +154,7 @@ suite('Testy', function() {
 			assert.equal(check.length, 0);
 			done();
 		});
-	});
+	}); */
 
 });
 
